@@ -1,7 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+Spell checking and spelling correction(In Thai address).
+"""
+
 __all__ = [
-    "split_address",
-    "candidates",
     "spell",
-    "spell_address",
+    "correct",
+    "correct_addr"
 ]
 
+from spell.core import spell, correct,correct_addr

@@ -1,74 +1,65 @@
-import re
+# -*- coding: utf-8 -*-
+"""
+Spell checker, using Peter Norvig algorithm.
+Spelling dictionary can be customized.
+Default spelling dictionary is based on Thai National Corpus.
+Based on Peter Norvig's Python code from http://norvig.com/spell-correct.html
+"""
 from collections import Counter
 from corpus.common import Word_freq
 from corpus.thaiLetter import thai_letters
 import multiprocessing
 from tokenize.tokenizer import word_tokenize as newmm_tokenize
 
-"""
-https://norvig.com/spell-correct.html
-"""
 
 WORDS = Word_freq()
+WORDS_TOTAL = sum(WORDS.values())
 
-def P(word, N=sum(WORDS.values())): 
+
+def P(word): 
     "Probability of `word`."
-    return WORDS[word] / N
+    return WORDS[word] / WORDS_TOTAL
 
-def correction(word): 
-    "Most probable spelling correction for word."
-    return max(candidates(word), key=P)
+def correct(word): 
+    """
+    Most probable spelling correction for word.
+    """
+    if word.isnumeric() or word == " " or word == "/":
+        return word
 
-def candidates(word): 
+    try:
+        word = max(candidates(word), key=P)
+    except:
+        pass
+
+    return word
+
+def candidates(word):
     "Generate possible spelling corrections for word."
     return (known([word]) or known(edits1(word)) or known(edits2(word)) or [word])
 
 def known(words): 
     "The subset of `words` that appear in the dictionary of WORDS."
-    return set(w for w in words if w in WORDS)
+    return list(w for w in words if w in WORDS)
 
 def edits1(word):
     "All edits that are one edit away from `word`."
-    letters    = thai_letters
     splits     = [(word[:i], word[i:])    for i in range(len(word) + 1)]
     deletes    = [L + R[1:]               for L, R in splits if R]
     transposes = [L + R[1] + R[0] + R[2:] for L, R in splits if len(R)>1]
-    replaces   = [L + c + R[1:]           for L, R in splits if R for c in letters]
-    inserts    = [L + c + R               for L, R in splits for c in letters]
+    replaces   = [L + c + R[1:]           for L, R in splits if R for c in thai_letters]
+    inserts    = [L + c + R               for L, R in splits for c in thai_letters]
     return set(deletes + transposes + replaces + inserts)
 
 def edits2(word): 
     "All edits that are two edits away from `word`."
-    return (e2 for e1 in edits1(word) for e2 in edits1(e1))
+    return set(e2 for e1 in edits1(word) for e2 in edits1(e1))
 
-# ===
-
-def worker(i, word, return_dict):
-    # s = time.time()
-    if word.isnumeric() or word == " " or word == "/":
-        return_dict[i] = word
-    else:
-        edited = correction(word)
-        return_dict[i] = edited
-    # print(f"{word}->{return_dict[i]}   {time.time()-s}")
-
-def correction_address(address):
-    # tokenize
-    words = newmm_tokenize(address)
-
-    # multiprocess
-    manager = multiprocessing.Manager()
-    return_dict = manager.dict()
-    jobs = []
-
-    for i, word in enumerate(words):
-        p = multiprocessing.Process(
-            target=worker, args=(i, word, return_dict))
-        jobs.append(p)
-        p.start()
-
-    for proc in jobs:
-        proc.join()
-    return_dict = dict(sorted(return_dict.items()))
-
-    return "".join(str(n) for n in return_dict.values())
+def correct_addr(addr: str):
+    """
+    """
+    words = newmm_tokenize(addr)
+    temp = []
+    for word in words:
+        temp.append(correct(word))
+    return "".join(temp)
