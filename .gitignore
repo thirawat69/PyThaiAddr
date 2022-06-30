@@ -1,0 +1,6 @@
+__pycache__
+test.py
+test.ipynb
+gen.ipynb
+*.ipynb
+*.csv

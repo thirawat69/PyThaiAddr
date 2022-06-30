@@ -1,0 +1,106 @@
+import os
+from typing import Union
+
+_CORPUS_DIRNAME = "corpus"
+
+
+def get_corpus(filename: str, as_is: bool = False) -> Union[frozenset, list]:
+    """
+    Read corpus data from file and return a frozenset or a list.
+    Each line in the file will be a member of the set or the list.
+
+    Param:
+        filename:   str 
+                    filename of the corpus to be read
+        as_is:      bool
+                    Variables for configuration of return type
+                    Default as False, a frozenset will be return. 
+                    If as_is is True, a list will be return.
+
+    Return: 
+        class:  `frozenset`
+                a frozenset will be return, with whitespaces stripped, and
+                empty values and duplicates removed.
+        class:  `list` 
+                a list will be return, with no modifications
+                in member values and their orders.
+
+    Example:
+        get_corpus('negations_th.txt')
+            # output:
+            # frozenset({'แต่', 'ไม่'})
+        get_corpus('ttc_freq.txt')
+            # output:
+            # frozenset({'โดยนัยนี้\\t1',
+            #    'ตัวบท\\t10',
+            #    'หยิบยื่น\\t3',
+            #     ...})
+    """
+
+    path = os.path.join(os.path.dirname(__file__), filename)
+
+    lines = []
+    with open(path, "r", encoding="utf-8-sig") as fh:
+        lines = fh.read().splitlines()
+
+    if as_is:
+        return lines
+
+    lines = [line.strip() for line in lines]
+
+    return frozenset(filter(None, lines))
+
+
+def get_address(filename: str):
+    """
+    Read Thai address and create a dictionary that values have two dimensions.
+    first dimension as word length, and the second dimension as word distance.
+    by default, word distance is zero.
+
+    Param:
+        filename:   str 
+                    filename of the corpus to be read
+
+    Return: dictionary
+            {
+                "word": [wordLength, distance],
+                "word": [wordLength, distance],
+                .
+                .
+                .
+                "word": [wordLength, distance]
+            }
+
+    Example:
+            {   'ที่อยู่': [7, 0],
+                'หมู่ที่': [7, 0],
+                .
+                .
+                .
+                'เมืองสุโขทัย': [12, 0]
+            }
+    """
+    path = os.path.join(os.path.dirname(__file__), filename)
+
+    lines = []
+    with open(path, "r", encoding="utf-8-sig") as fh:
+        lines = fh.read().splitlines()
+
+    return {i: [len(i), 0] for i in lines}
+
+def get_word_freq(filename: str):
+    """
+    Param:
+        filename:   str 
+                    filename of the corpus to be read
+    """
+    path = os.path.join(os.path.dirname(__file__), filename)
+
+    lines = []
+    with open(path, "r", encoding="utf-8-sig") as fh:
+        lines = fh.read().splitlines()
+
+    word = ["".join(x.split("\t")[:-1]) for x in lines]
+    freq = [int("".join(x.split("\t")[-1])) for x in lines]
+    dict_corpus = dict(zip(word, freq))
+    return dict_corpus
