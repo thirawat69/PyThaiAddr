@@ -11,7 +11,7 @@ _THAI_ADDRESS = get_address(_THAI_ADDRESS_FILENAME)
 _WORD_FREQ_FILENAME = "Thai_addr_word_frequency.txt"
 _WORD_FREQ = get_word_freq(_WORD_FREQ_FILENAME)
 
-_UNIGRAM = "Thai_addr_uiigrame_frequency.txt"
+_UNIGRAM = "Thai_addr_unigrame_frequency.txt"
 _BIGRAM  = "Thai_addr_bigrame_frequency.txt"
 _TRIGRAM = "Thai_addr_trigrame_frequency.txt"
 
@@ -51,7 +51,7 @@ def Word_freq():
     """
     return _WORD_FREQ
 
-class Corpus_gram():
+class Corpus_gram:
     """
         Param:
             n:  str
@@ -59,13 +59,15 @@ class Corpus_gram():
                 - "bi"
                 - "tri"
     """
-    def __init__(self,n):
-        if self.n=="bi":
+    def __init__(self,gram:str = "uni"):
+        self.gram = gram
+        if self.gram=="bi":
             corpus_dict = get_word_freq(_BIGRAM)
-        elif self.n == "tri":
+        elif self.gram == "tri":
             corpus_dict = get_word_freq(_TRIGRAM)
         else:
             corpus_dict = get_word_freq(_UNIGRAM)
+
         self.corpus_dict = corpus_dict
         self.words = list(self.corpus_dict.keys())
         self.freqs = list(self.corpus_dict.values())
