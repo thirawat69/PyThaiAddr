@@ -1,7 +1,6 @@
-import os
-from tokenize.tokenizer import word_tokenize as newmm_tokenize
+from tokenize import word_tokenize as newmm_tokenize
 from Levenshtein import ratio
-from corpus.common import Thai_address
+from corpus import Thai_address
 
 addresses = Thai_address()
 

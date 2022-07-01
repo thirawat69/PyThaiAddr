@@ -6,10 +6,8 @@ Default spelling dictionary is based on Thai National Corpus.
 Based on Peter Norvig's Python code from http://norvig.com/spell-correct.html
 """
 from collections import Counter
-from corpus.common import Word_freq
-from corpus.thaiLetter import thai_letters
-import multiprocessing
-from tokenize.tokenizer import word_tokenize as newmm_tokenize
+from corpus import Word_freq,_THAI_LETTERS
+from tokenize import word_tokenize as newmm_tokenize
 
 
 WORDS = Word_freq()
@@ -47,8 +45,8 @@ def edits1(word):
     splits     = [(word[:i], word[i:])    for i in range(len(word) + 1)]
     deletes    = [L + R[1:]               for L, R in splits if R]
     transposes = [L + R[1] + R[0] + R[2:] for L, R in splits if len(R)>1]
-    replaces   = [L + c + R[1:]           for L, R in splits if R for c in thai_letters]
-    inserts    = [L + c + R               for L, R in splits for c in thai_letters]
+    replaces   = [L + c + R[1:]           for L, R in splits if R for c in _THAI_LETTERS]
+    inserts    = [L + c + R               for L, R in splits for c in _THAI_LETTERS]
     return set(deletes + transposes + replaces + inserts)
 
 def edits2(word): 

@@ -1,8 +1,5 @@
 __pycache__
-test.py
-test_core.py
-test_sent.py
-test.ipynb
-gen.ipynb
 *.ipynb
 *.csv
+
+test_*

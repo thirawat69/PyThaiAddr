@@ -16,7 +16,7 @@ import re
 from collections import defaultdict
 from heapq import heappop, heappush
 from typing import Generator, List
-from corpus.common import Thai_address_indication
+from corpus import Thai_address_indication
 
 from util.trie import Trie
 from tokenize.tcc import tcc_pos
