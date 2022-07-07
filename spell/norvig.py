@@ -7,7 +7,7 @@ Based on Peter Norvig's Python code from http://norvig.com/spell-correct.html
 """
 from collections import Counter
 from corpus import Word_freq,_THAI_LETTERS
-from tokenize import word_tokenize as newmm_tokenize
+from Xtokenize import word_tokenize as newmm_tokenize
 
 
 WORDS = Word_freq()
