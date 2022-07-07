@@ -88,6 +88,7 @@ def get_address(filename: str):
 
     return {i: [len(i), 0] for i in lines}
 
+
 def get_word_freq(filename: str):
     """
     Param:
@@ -104,6 +105,7 @@ def get_word_freq(filename: str):
     freq = [int("".join(x.split("\t")[-1])) for x in lines]
     dict_corpus = dict(zip(word, freq))
     return dict_corpus
+
 
 # ----------------------------------------------------------------------------------------
 thai_consonants = "กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรลวศษสหฬอฮ"  # 44 chars
