@@ -1,7 +1,7 @@
 import re
 from typing import List, Optional
 from util.trie import Trie
-from tokenize.newmm import segment
+from Xtokenize.newmm import segment
 
 
 def word_tokenize(

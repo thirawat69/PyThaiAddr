@@ -19,7 +19,7 @@ from typing import Generator, List
 from corpus import Thai_address_indication
 
 from util.trie import Trie
-from tokenize.tcc import tcc_pos
+from Xtokenize.tcc import tcc_pos
 
 DEFAULT_WORD_DICT_TRIE = Trie(Thai_address_indication())
 

@@ -1,8 +1,9 @@
-from tokenize import word_tokenize as newmm_tokenize
+from Xtokenize import word_tokenize as newmm_tokenize
 from Levenshtein import ratio
 from corpus import Thai_address
 
 addresses = Thai_address()
+
 
 def correct(word):
     """
@@ -21,12 +22,13 @@ def correct(word):
     """
     if word.isnumeric() or word == " " or word == "/":
         return word
-    
+
     temp = candidates(word, 1)
     # if distance>0.3 and len(word)<=2
-    if temp[0][1] > 0.3 and len(temp[0][0])<=2:
+    if temp[0][1] > 0.3 and len(temp[0][0]) <= 2:
         return ""
     return temp[0][0]
+
 
 def candidates(word, show=10):
     """
@@ -62,12 +64,13 @@ def candidates(word, show=10):
         return {k: v[1] for k, v in addresses.items() if v[0] in range(n_char-num, n_char+num)}
 
     address = split_address(word)
-    
+
     dist = {key: 1-ratio(word, key) for key in address}
     n_address = len(addresses)
     if show > n_address:
         show = n_address
     return sorted(dist.items(), key=lambda x: x[1], reverse=False)[:show]
+
 
 def correct_addr(addr: str):
     """
@@ -77,4 +80,3 @@ def correct_addr(addr: str):
     for word in words:
         temp.append(correct(word))
     return "".join(temp)
-
