@@ -69,10 +69,10 @@ def correct_addr(addr: str, engine="ediz"):
         # output: "ที่อยู่ 31/631 หมู่ที่ 16 เมืองนครศรีธรรมราช เขตพระนคร จ.กรุงเทพมหานคร"
     """
     if engine == "ediz":
-        from spell.norvig import correct_addr as SPELL_CHECKER
+        from spell.ediz import correct_addr as SPELL_CHECKER
         text_correct = SPELL_CHECKER(addr)
     elif engine == "norvig":
-        from spell.ediz import correct_addr as SPELL_CHECKER
+        from spell.norvig import correct_addr as SPELL_CHECKER
         text_correct = SPELL_CHECKER(addr)
     else:
         from spell.symspell import correct as SPELL_CHECKER
