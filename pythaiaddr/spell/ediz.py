@@ -4,7 +4,7 @@ Spell checker, using edit distance Levenshtein algorithm.
 from libraly ratio.
 """
 from Levenshtein import ratio
-from Xtokenize import word_tokenize as newmm_tokenize
+from tokenize import word_tokenize as newmm_tokenize
 from corpus import Thai_address
 
 addresses = Thai_address()

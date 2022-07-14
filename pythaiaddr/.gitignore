@@ -1,0 +1,7 @@
+__pycache__
+*.ipynb
+*.csv
+
+test_*
+
+symspell.py

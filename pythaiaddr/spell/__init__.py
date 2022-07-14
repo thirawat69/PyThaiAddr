@@ -9,4 +9,4 @@ __all__ = [
     "correct_addr"
 ]
 
-from spell.core import spell, correct,correct_addr
+from spell.core import spell, correct, correct_addr
