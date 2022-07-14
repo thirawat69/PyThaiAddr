@@ -1,5 +1,10 @@
-from Xtokenize import word_tokenize as newmm_tokenize
+# -*- coding: utf-8 -*-
+"""
+Spell checker, using edit distance Levenshtein algorithm.
+from libraly ratio.
+"""
 from Levenshtein import ratio
+from Xtokenize import word_tokenize as newmm_tokenize
 from corpus import Thai_address
 
 addresses = Thai_address()
@@ -9,7 +14,7 @@ def correct(word):
     """
     Most probable spelling correction for word.
 
-    Params: 
+    Param: 
         word:   str
                 input word.
 
@@ -34,7 +39,7 @@ def candidates(word, show=10):
     """
     Find nearby words from input word.
 
-    Params: 
+    Param: 
         word:   str
                 word to search for nearby words.
         show:   int
@@ -74,6 +79,14 @@ def candidates(word, show=10):
 
 def correct_addr(addr: str):
     """
+    correct thai address
+
+    Param:
+        addt:   str
+                thai address
+
+    Return:
+        corrected thai address
     """
     words = newmm_tokenize(addr)
     temp = []

@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 """
 Trie data structure.
-
 Designed to use for tokenizer's dictionary, but can be for other purposes.
+
+Credits:
+    * PyThaiNLP
 """
 from typing import Iterable, List, Union
 
