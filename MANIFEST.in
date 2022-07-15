@@ -1,0 +1,24 @@
+include README.md
+include LICENSE
+include *.txt
+include *.py
+
+recursive-include pythaiaddr/corpus *
+recursive-exclude pythaiaddr/corpus/__pycache__/*
+
+recursive-include pythaiaddr/spell *
+recursive-exclude pythaiaddr/spell/__pycache__/*
+
+recursive-include pythaiaddr/tokenize *
+recursive-exclude pythaiaddr/tokenize/__pycache__/*
+
+recursive-include pythaiaddr/util *
+recursive-exclude pythaiaddr/util/__pycache__/*
+
+recursive-exclude * __pycache__
+recursive-exclude pythaiaddr/*/__pycache__/*
+
+recursive-include pythaiaddr/*
+recursive-exclude * __pycache__
+recursive-exclude pythaiaddr/test*
+recursive-exclude * *.py[co]

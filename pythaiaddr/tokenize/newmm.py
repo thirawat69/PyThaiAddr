@@ -16,10 +16,10 @@ import re
 from collections import defaultdict
 from heapq import heappop, heappush
 from typing import Generator, List
-from corpus import Thai_address_indication
+from pythaiaddr.corpus import Thai_address_indication
 
-from util.trie import Trie
-from tokenize.tcc import tcc_pos
+from pythaiaddr.util.trie import Trie
+from pythaiaddr.tokenize.tcc import tcc_pos
 
 DEFAULT_WORD_DICT_TRIE = Trie(Thai_address_indication())
 

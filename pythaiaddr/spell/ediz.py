@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 Spell checker, using edit distance Levenshtein algorithm.
-from libraly ratio.
+from libraly python-Levenshtein.
 """
 from Levenshtein import ratio
-from tokenize import word_tokenize as newmm_tokenize
-from corpus import Thai_address
+from pythaiaddr.tokenize import word_tokenize as newmm_tokenize
+from pythaiaddr.corpus import Thai_address
 
 addresses = Thai_address()
 

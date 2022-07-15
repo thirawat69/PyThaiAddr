@@ -37,6 +37,7 @@ def Thai_address():
     """
     return _THAI_ADDRESS
 
+
 def Word_freq():
     """
     Return dictionary of frequency.

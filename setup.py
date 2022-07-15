@@ -1,27 +1,32 @@
 from distutils.core import setup
-import os.path
+
+
+readme = """
+123
+"""
 
 
 setup(
     name='pythaiaddr',         # How you named your package folder (MyLib)
-    packages=['pythaiaddr'],   # Chose the same as "name"
-    version='0.0.1',      # Start with a small number and increase it with every change you make
+    packages=['pythaiaddr','pythaiaddr.corpus','pythaiaddr.spell','pythaiaddr.tokenize','pythaiaddr.util'],   # Chose the same as "name"
+    package_data={'pythaiaddr': ['corpus/*.txt']},
+    version='0.0.6',      # Start with a small number and increase it with every change you make
     # Chose a license from here: https://help.github.com/articles/licensing-a-repository
     license='MIT',
     # Give a short description about your library
     description='Correct thai address',
-    long_description='plese read in: https://github.com/thirawat69/PyThaiAddr',
+    long_description=readme,
     author='Thirawat Phongsathatkit',                   # Type in your name
     author_email='Thirawatp9@gmail.com',      # Type in your E-Mail
     # Provide either the link to your github or to your website
     url='https://github.com/thirawat69',
     # I explain this later on
-    download_url='',
+    download_url='https://pypi.org/project/pythaiaddr/0.0.6/#files',
     # Keywords that define your package best
     keywords=['correct', 'correction', 'thai', 'address', 'spell'],
     install_requires=[
         'python-Levenshtein == 0.12.2',
-        'numpy == 1.19.5'
+        'numpy'
     ],
     classifiers=[
         # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package

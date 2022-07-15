@@ -4,8 +4,8 @@ Spell checker, using Peter Norvig algorithm.
 Based on Peter Norvig's Python code from http://norvig.com/spell-correct.html
 """
 from collections import Counter
-from corpus import Word_freq, _THAI_LETTERS
-from tokenize import word_tokenize as newmm_tokenize
+from pythaiaddr.corpus import Word_freq, _THAI_LETTERS
+from pythaiaddr.tokenize import word_tokenize as newmm_tokenize
 
 
 WORDS = Word_freq()
@@ -59,6 +59,14 @@ def edits2(word):
 
 def correct_addr(addr: str):
     """
+    correct thai address
+
+    Param:
+        addt:   str
+                thai address
+
+    Return:
+        corrected thai address
     """
     words = newmm_tokenize(addr)
     temp = []
