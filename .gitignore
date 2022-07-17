@@ -1,8 +1,6 @@
 __pycache__/
-*.ipynb
 *.csv
 
-test_*
 
 dist/
 pythaiaddr.egg-info/

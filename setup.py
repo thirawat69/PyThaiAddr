@@ -19,7 +19,7 @@ setup(
     author='Thirawat Phongsathatkit',                   # Type in your name
     author_email='Thirawatp9@gmail.com',      # Type in your E-Mail
     # Provide either the link to your github or to your website
-    url='https://github.com/thirawat69',
+    url='https://github.com/thirawat69/PyThaiAddr',
     # I explain this later on
     download_url='https://pypi.org/project/pythaiaddr/0.0.6/#files',
     # Keywords that define your package best
@@ -36,9 +36,6 @@ setup(
         'Topic :: Software Development :: Build Tools',
         'License :: OSI Approved :: MIT License',   # Again, pick a license
         # Specify which pyhton versions that you want to support
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
