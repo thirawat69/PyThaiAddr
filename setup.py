@@ -2,7 +2,47 @@ from distutils.core import setup
 
 
 readme = """
-123
+# PyThaiAddr: Thai Address Processing in Python
+
+PyThaiAddr is a Python language library for processing Thai addresses. Currently focusing on word correcting.
+
+PyThaiAddr เป็นไลบารีภาษาไพทอนสำหรับประมวลผลที่อยู่ภาษาไทย โดยปัจจุบันเน้นไปที่การแก้คำผิด
+
+
+## Installation
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install PyThaiAddr.
+
+```
+pip install pythaiaddr
+```
+
+## Usage
+
+Tokenize 
+```
+from pythaiaddr import word_tokenize
+
+addr = 'ที่ชยู่ 125/52 หมู่ทตี่ 10 ต.อดงัะดะ อ.ยแม่ลาว จ.เชียงรเาย'
+word_tokenize(addr)
+```
+
+Spelling 
+```
+from pythaiaddr import spell
+
+word = 'c.กรุงเทถมหานค'
+spell(word , engine='norvig')
+```
+
+Correcting word
+```
+from pythaiaddr import correct
+
+print(correct('กรุงเทถมหานค', engine='ediz'))
+```
+
+see more on [Github](https://github.com/thirawat69/PyThaiAddr)
 """
 
 
@@ -10,7 +50,7 @@ setup(
     name='pythaiaddr',         # How you named your package folder (MyLib)
     packages=['pythaiaddr','pythaiaddr.corpus','pythaiaddr.spell','pythaiaddr.tokenize','pythaiaddr.util'],   # Chose the same as "name"
     package_data={'pythaiaddr': ['corpus/*.txt']},
-    version='0.0.6',      # Start with a small number and increase it with every change you make
+    version='0.0.7',      # Start with a small number and increase it with every change you make
     # Chose a license from here: https://help.github.com/articles/licensing-a-repository
     license='MIT',
     # Give a short description about your library
@@ -21,7 +61,7 @@ setup(
     # Provide either the link to your github or to your website
     url='https://github.com/thirawat69/PyThaiAddr',
     # I explain this later on
-    download_url='https://pypi.org/project/pythaiaddr/0.0.6/#files',
+    download_url='https://pypi.org/project/pythaiaddr/0.0.7/#files',
     # Keywords that define your package best
     keywords=['correct', 'correction', 'thai', 'address', 'spell'],
     install_requires=[
@@ -36,7 +76,6 @@ setup(
         'Topic :: Software Development :: Build Tools',
         'License :: OSI Approved :: MIT License',   # Again, pick a license
         # Specify which pyhton versions that you want to support
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
     ],
