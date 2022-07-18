@@ -13,38 +13,13 @@ PyThaiAddr เป็นไลบารีภาษาไพทอนสำหร
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install PyThaiAddr.
 
-```
+```bash
 pip install pythaiaddr
 ```
 
-## Usage
-
-Tokenize 
-```
-from pythaiaddr import word_tokenize
-
-addr = 'ที่ชยู่ 125/52 หมู่ทตี่ 10 ต.อดงัะดะ อ.ยแม่ลาว จ.เชียงรเาย'
-word_tokenize(addr)
-```
-
-Spelling 
-```
-from pythaiaddr import spell
-
-word = 'c.กรุงเทถมหานค'
-spell(word , engine='norvig')
-```
-
-Correcting word
-```
-from pythaiaddr import correct
-
-print(correct('กรุงเทถมหานค', engine='ediz'))
-```
 
 see more on [Github](https://github.com/thirawat69/PyThaiAddr)
 """
-
 
 setup(
     name='pythaiaddr',         # How you named your package folder (MyLib)
