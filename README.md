@@ -17,7 +17,7 @@ PyThaiAddr เป็นไลบารีภาษาไพทอนสำหร
 <details>
   <summary>List of Features</summary>
   
-- Character and words about the address, like Thai address (`Thai_address), All Thai charactor (`_THAI_LETTERS`).
+- Character and words about the address, like Thai address (`Thai_address`), All Thai charactor (`_THAI_LETTERS`).
 - Thai address linguistic unit tokenization, including sentence (`word_tokenize`)
 - Thai address spelling suggestion and correction (`spell` and `correct` and `correct_addr`)
 
