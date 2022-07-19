@@ -67,19 +67,7 @@ correct_addr(addr, engine='symspell')
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
 Please make sure to update tests as appropriate.
 
-## Citations
-```
-Wannaphong Phatthiyaphaibun, Korakot Chaovavanich, Charin Polpanumas, Arthit Suriyawongkul, Lalita Lowphansirikul, & Pattarawat Chormai. (2016, Jun 27). PyThaiNLP: Thai Natural Language Processing in Python. Zenodo. http://doi.org/10.5281/zenodo.3519354
-```
-```
-Krit Apornwirat. Thai-sentence-correction. Github. https://github.com/Mickzaa/Thai-sentence-correction
-```
-If you use `PythaiAddr` in your project or publication, please cite the library as follows
-```
-Thirawat Phongsathatkit. PyThaiAddr: Thai Address Processing in Python. Github. https://github.com/thirawat69/PyThaiAddr
-```
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
