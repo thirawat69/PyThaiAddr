@@ -17,7 +17,7 @@ delete_dict = Preprocess(unigram)
 
 def preprocess_input(addr: str):
     """
-    Extract numbers from addresses and cut words.
+    Extract numbers from addresses and cut words. And add spaces before and after the address
 
     Param:
         addr:   str
@@ -25,7 +25,7 @@ def preprocess_input(addr: str):
     Example:
         addr = "ที่อมยู่ 147/69 หมู่ทฌี่ 1"
         preprocess_input(addr)
-        # output: ([' ', 'ที่อมยู่', ' ', '<n/>', '/', '<n/>', ' ', 'หมู่ทฌี่',' ', '<n/>', ' ',],['147', '69', '1'])
+        # output: ([' ', 'ที่อมยู่', ' ', '<n/>', '/', '<n/>', ' ', 'หมู่ทฌี่',' ', '<n/>', ' '], ['147', '69', '1'])
     """
     addr = " "+addr+" "
     words = word_tokenize(addr)
