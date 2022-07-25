@@ -11,7 +11,7 @@ PyThaiAddr เป็นไลบารีภาษาไพทอนสำหร
 ## Getting Started
 - PyThaiAddr requires Python 3.6+
 - PyThaiAddr Document v.1 [notebook](https://github.com/thirawat69/PyThaiAddr/blob/main/doc/PyThaiAddr_Document_v_1.ipynb) [colab](https://colab.research.google.com/drive/151UPvQdnrP26MGo25wFkQEhp_0nomgiP) | PyThaiAddr Document v.2 [notebook ](https://github.com/thirawat69/PyThaiAddr/blob/main/doc/PyThaiAddr_Document_v_2.ipynb) [colab](https://colab.research.google.com/drive/1ih_i--tWlI-Aiq172qCKO02F43GDXYhG)
-- Note [notebook](https://github.com/thirawat69/PyThaiAddr/blob/main/doc/note.ipynb)[colab](https://colab.research.google.com/drive/1Q7GNv2-8t6c5UAxbGqV0nJw3JJXeRp9k?) - for more information about performance and accuracy.
+- Note [notebook](https://github.com/thirawat69/PyThaiAddr/blob/main/doc/note.ipynb) [colab](https://colab.research.google.com/drive/1Q7GNv2-8t6c5UAxbGqV0nJw3JJXeRp9k?) - for more information about performance and accuracy.
 
 ## Capabilities
 <details>
