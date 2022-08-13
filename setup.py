@@ -25,7 +25,7 @@ setup(
     name='pythaiaddr',         # How you named your package folder (MyLib)
     packages=['pythaiaddr','pythaiaddr.corpus','pythaiaddr.spell','pythaiaddr.tokenize','pythaiaddr.util'],   # Chose the same as "name"
     package_data={'pythaiaddr': ['corpus/*.txt']},
-    version='0.0.7',      # Start with a small number and increase it with every change you make
+    version='0.0.8',      # Start with a small number and increase it with every change you make
     # Chose a license from here: https://help.github.com/articles/licensing-a-repository
     license='MIT',
     # Give a short description about your library
@@ -36,7 +36,7 @@ setup(
     # Provide either the link to your github or to your website
     url='https://github.com/thirawat69/PyThaiAddr',
     # I explain this later on
-    download_url='https://pypi.org/project/pythaiaddr/0.0.7/#files',
+    download_url='https://pypi.org/project/pythaiaddr/0.0.8/#files',
     # Keywords that define your package best
     keywords=['correct', 'correction', 'thai', 'address', 'spell'],
     install_requires=[
