@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
 """
+this code is under Apache-2.0 license from PyThaiNLP library.
+https://github.com/PyThaiNLP
+"""
+
+"""
 Dictionary-based maximal matching word segmentation, constrained with
 Thai Character Cluster (TCC) boundaries.
 

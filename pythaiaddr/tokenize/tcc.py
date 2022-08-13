@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
 """
+this code is under Apache-2.0 license from PyThaiNLP library.
+https://github.com/PyThaiNLP
+"""
+
+"""
 The implementation of tokenizer accorinding to Thai Character Clusters (TCCs)
 rules purposed by `Theeramunkong et al. 2000. \
     <http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.59.2548>`_

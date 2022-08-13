@@ -1,3 +1,7 @@
+"""
+this code is under Apache-2.0 license from PyThaiNLP library.
+https://github.com/PyThaiNLP
+"""
 import re
 from typing import List, Optional
 from pythaiaddr.util.trie import Trie
